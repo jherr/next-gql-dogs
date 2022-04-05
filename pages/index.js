@@ -6,7 +6,7 @@ import { Grid, Card, Image, Text, Title } from "@mantine/core";
 import { queryClient, getDogs } from "../src/api";
 
 export async function getServerSideProps() {
-  await queryClient.prefetchQuery("dogs", () => getDogs());
+  await queryClient.prefetchQuery(["dogs"], () => getDogs());
 
   return {
     props: {

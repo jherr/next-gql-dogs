@@ -5,7 +5,7 @@ import { Grid, Text, Button, Title, Image } from "@mantine/core";
 import { queryClient, dogByName } from "../../src/api";
 
 export async function getServerSideProps({ params }) {
-  await queryClient.prefetchQuery("dog", () =>
+  await queryClient.prefetchQuery(["dog"], () =>
     dogByName({ name: params.name })
   );
 
@@ -20,7 +20,7 @@ export async function getServerSideProps({ params }) {
 const DogDetail: React.FunctionComponent<{
   name: string;
 }> = ({ name }) => {
-  const { data } = useQuery("dog", () => dogByName({ name }));
+  const { data } = useQuery(["dog"], () => dogByName({ name }));
 
   if (!data.dog) {
     return <div>No dog found</div>;

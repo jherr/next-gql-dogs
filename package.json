@@ -22,7 +22,7 @@
     "next": "12.1.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "react-query": "^3.34.19",
+    "react-query": "4.0.0-beta.1",
     "reflect-metadata": "^0.1.13",
     "tabler-icons-react": "^1.43.0",
     "type-graphql": "^1.1.1"
